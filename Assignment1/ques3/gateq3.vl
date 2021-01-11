@@ -1,0 +1,10 @@
+module gateq3(input a,b,c,d,output o1,o2,o3,o4,o5,o6,o7,f);
+not(o1,a);
+not(o2,b);
+not(o3,c);
+not(o4,d);
+and(o5,o2,o4);
+and(o6,o2,o3);
+and(o7,o1,o3,d);
+or(f,o5,o6,o7);
+endmodule

@@ -1,0 +1,31 @@
+`include "gateq2.vl"
+
+module gateq2_tb;
+
+wire o1,u2,q;
+reg a,b,c;
+
+gateq2 gate(.a(a),.b(b),.c(c),.o1(o1),.o2(o2),.q(q));
+
+initial
+begin
+
+$monitor("[T=%0t a=%0b b=%0b c=%0b q=%0b]", $time, a, b, c, q);
+#1 a=1'b0; b=1'b0; c=1'b0;
+
+#1 a=1'b0; b=1'b0; c=1'b1;
+
+#1 a=1'b0; b=1'b1; c=1'b0;
+
+#1 a=1'b0; b=1'b1; c=1'b1;
+
+#1 a=1'b1; b=1'b0; c=1'b0;
+
+#1 a=1'b1; b=1'b0; c=1'b1;
+
+#1 a=1'b1; b=1'b1; c=1'b0;
+
+#1 a=1'b1; b=1'b1; c=1'b1;
+
+end
+endmodule

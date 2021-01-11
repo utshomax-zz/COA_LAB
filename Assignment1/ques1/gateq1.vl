@@ -1,0 +1,5 @@
+module gateq1(input x,y,z,p,output o1,o2,c);
+xor(o1,x,y);
+xor(o2,z,p);
+xor(c,o1,o2);
+endmodule

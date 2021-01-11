@@ -1,0 +1,52 @@
+`include "gateq3.vl"
+
+module gateq3_tb;
+
+wire o1,o2,o3,o4,o5,o6,o7,f;
+reg a,b,c,d;
+
+gateq3 gate(.a(a),.b(b),.c(c),.d(d),.o1(o1),.o2(o2),.o3(o3),.o4(o4),.o5(o5),.o6(o6),.o7(o7),.f(f));
+
+
+initial
+begin
+
+$monitor("[T=%0t a=%0b b=%0b c=%0b d=%0b f=%0b]",$time,a,b,c,d,f);
+
+#1 a=1'b0; b=1'b0; c=1'b0; d=1'b0;
+
+#1 a=1'b0; b=1'b0; c=1'b0; d=1'b1;
+
+#1 a=1'b0; b=1'b0; c=1'b1; d=1'b0;
+
+#1 a=1'b0; b=1'b0; c=1'b1; d=1'b1;
+
+#1 a=1'b0; b=1'b1; c=1'b0; d=1'b0;
+
+#1 a=1'b0; b=1'b1; c=1'b0; d=1'b1;
+
+#1 a=1'b0; b=1'b1; c=1'b1; d=1'b0;
+
+#1 a=1'b0; b=1'b1; c=1'b1; d=1'b1;
+
+#1 a=1'b1; b=1'b0; c=1'b0; d=1'b0;
+
+#1 a=1'b1; b=1'b0; c=1'b0; d=1'b1;
+
+#1 a=1'b1; b=1'b0; c=1'b1; d=1'b0;
+
+#1 a=1'b1; b=1'b0; c=1'b1; d=1'b1;
+
+#1 a=1'b1; b=1'b1; c=1'b0; d=1'b0;
+
+#1 a=1'b1; b=1'b1; c=1'b0; d=1'b1;
+
+#1 a=1'b1; b=1'b1; c=1'b1; d=1'b0;
+
+#1 a=1'b1; b=1'b1; c=1'b1; d=1'b1;
+
+
+end
+endmodule
+
+

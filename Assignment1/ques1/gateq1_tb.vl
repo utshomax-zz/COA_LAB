@@ -1,0 +1,47 @@
+`include "gateq1.vl"
+
+module gateq1_tb;
+
+wire o1,o2,c;
+reg x,y,z,p;
+
+gateq1 gates(.x(x),.y(y),.z(z),.p(p),.o1(o1),.o2(o2),.c(c));
+
+initial
+begin
+
+$monitor("[T=%0t    x=%0b y=%0b z=%0b p=%0b output=%0b]",$time,x,y,z,p,c);
+
+#1 x=1'b0; y=1'b0; z=1'b0; p=1'b0;
+
+#1 x=1'b0; y=1'b0; z=1'b0; p=1'b1;
+
+#1 x=1'b0; y=1'b0; z=1'b1; p=1'b0;
+
+#1 x=1'b0; y=1'b0; z=1'b1; p=1'b1;
+
+#1 x=1'b0; y=1'b1; z=1'b0; p=1'b0;
+
+#1 x=1'b0; y=1'b1; z=1'b0; p=1'b1;
+
+#1 x=1'b0; y=1'b1; z=1'b1; p=1'b0;
+
+#1 x=1'b0; y=1'b1; z=1'b1; p=1'b1;
+
+#1 x=1'b1; y=1'b0; z=1'b0; p=1'b0;
+
+#1 x=1'b1; y=1'b0; z=1'b0; p=1'b1;
+
+#1 x=1'b1; y=1'b0; z=1'b1; p=1'b0;
+
+#1 x=1'b1; y=1'b0; z=1'b1; p=1'b1;
+
+#1 x=1'b1; y=1'b1; z=1'b0; p=1'b0;
+
+#1 x=1'b1; y=1'b1; z=1'b0; p=1'b1;
+
+#1 x=1'b1; y=1'b1; z=1'b1; p=1'b0;
+
+#1 x=1'b1; y=1'b1; z=1'b1; p=1'b1;
+end
+endmodule
